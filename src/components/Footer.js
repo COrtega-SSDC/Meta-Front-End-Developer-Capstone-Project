@@ -1,7 +1,7 @@
-import FB from '../../public/facebook.png'
-import Twitter from '../../public/twitter.png'
-import Insta from '../../public/instagram.png'
-import Linkedin from '../../public/linkedin.png'
+import FB from '../images/facebook.png'
+import Twitter from '../images/twitter.png'
+import Insta from '../images/instagram.png'
+import Linkedin from '../images/linkedin.png'
 
 function Footer() {
 
