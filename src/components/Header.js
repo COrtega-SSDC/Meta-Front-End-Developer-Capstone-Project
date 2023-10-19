@@ -2,9 +2,9 @@
 
 function Header() {
 
-    // return (
-
-    // );
+    return (
+        <img src='/public/Logo.svg'></img>
+    );
 
 }
 
