@@ -7,7 +7,7 @@ function Footer() {
 
     return (
         <>
-            <img src='/public/Logo.svg'></img>
+            <img src='./images/Logo.svg' alt="Little Lemon Logo"></img>
             <ul title="Doormat Navigation">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
