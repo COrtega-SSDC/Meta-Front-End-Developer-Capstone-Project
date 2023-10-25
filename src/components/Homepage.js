@@ -1,10 +1,10 @@
-
+import Main from './Main'
 
 function Homepage() {
 
-    // return (
-        
-    // );
+    return (
+        <Main/>
+    );
 
 }
 
