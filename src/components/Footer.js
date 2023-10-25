@@ -3,11 +3,13 @@ import Twitter from '../images/twitter.png'
 import Insta from '../images/instagram.png'
 import LinkedIn from '../images/linkedin.png'
 
+import logo from '../images/logo.png'
+
 function Footer() {
 
     return (
         <>
-            <img src="./images/logo.png" alt="Little Lemon Logo"/>
+            <img src={logo} alt="Little Lemon Logo"/>
             <h3>Doormat Navigation</h3>
             <ul title="Doormat Navigation">
                 <li><a href="/home">Home</a></li>
