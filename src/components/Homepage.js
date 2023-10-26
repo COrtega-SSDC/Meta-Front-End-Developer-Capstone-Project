@@ -1,9 +1,20 @@
-import Main from './Main'
+import Hero from './Hero'
+import Specials from './Specials';
+import Testimonials from './Testimonials';
+import Backstory from './Backstory';
+import Footer from './Footer';
 
 function Homepage() {
 
     return (
-        <Main/>
+        <div className='Homepage'>
+            <Hero />
+            <Specials />
+            <Testimonials/>
+            <Backstory/>
+            <Footer/>
+        </div>
+
     );
 
 }
