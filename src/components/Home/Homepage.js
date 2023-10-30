@@ -2,7 +2,6 @@ import Hero from './Hero'
 import Specials from './Specials';
 import Testimonials from './Testimonials';
 import Backstory from './Backstory';
-import Footer from './Footer';
 
 function Homepage() {
 
@@ -12,7 +11,6 @@ function Homepage() {
             <Specials />
             <Testimonials/>
             <Backstory/>
-            <Footer/>
         </div>
 
     );

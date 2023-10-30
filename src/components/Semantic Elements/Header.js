@@ -1,5 +1,5 @@
 
-import Nav from "./Nav";
+import Nav from "../Semantic Elements/Nav";
 function Header() {
 
     return (
