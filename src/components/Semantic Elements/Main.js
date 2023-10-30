@@ -1,8 +1,11 @@
 
-import { useRoutes } from 'react-router-dom';
-import router from './Router';
+// import { useRoutes } from 'react-router-dom';
+// import router from './Router';
 
 import { Routes, Route } from 'react-router-dom';
+
+import HomePage from '../Home/Homepage';
+import BookingPage from '../Reservations/Booking Page'
 
 function Main() {
 
