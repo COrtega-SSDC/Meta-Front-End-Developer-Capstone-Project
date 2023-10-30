@@ -120,7 +120,7 @@ li {
   width: 202px;
   height: 76px;
   flex-shrink: 0;
-  background: url(<path-to-image>), lightgray 50% / contain no-repeat;
+  background: url('../images/logo.png'), lightgray 50% / contain no-repeat;
 }
 
 .backstory-image {
@@ -138,5 +138,5 @@ li {
   width: 162px;
   height: 279px;
   flex-shrink: 0;
-  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+  background: url('../images/alt-logo.png'), lightgray 50% / cover no-repeat;
 }
