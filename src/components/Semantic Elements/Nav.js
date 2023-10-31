@@ -11,14 +11,16 @@ function Nav() {
     }
 
     return (
-        <nav className='nav'>
-            <Link to="/" style={style}>Home</Link>
-            <Link to="/about" style={style}>About</Link>
-            <Link to="/menu" style={style}>Menu</Link>
-            <Link to="/reservations" style={style}>Reservations</Link>
-            <Link to="/order" style={style}>Order Online</Link>
-            <Link to="/login" style={style}>Login</Link>
-        </nav>
+        <>
+            <nav className='nav'>
+                <Link to="/" style={style}>Home</Link>
+                <Link to="/about" style={style}>About</Link>
+                <Link to="/menu" style={style}>Menu</Link>
+                <Link to="/reservations" style={style}>Reservations</Link>
+                <Link to="/order" style={style}>Order Online</Link>
+                <Link to="/login" style={style}>Login</Link>
+            </nav>
+        </>
     );
 
 }
