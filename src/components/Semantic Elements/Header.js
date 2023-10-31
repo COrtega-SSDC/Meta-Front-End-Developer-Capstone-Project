@@ -2,7 +2,7 @@
 import Nav from "../Semantic Elements/Nav";
 
 import logo from '../../images/logo.png'
-import { HStack, Flex, Box, Container } from '@chakra-ui/react'
+import { HStack, Flex, Container } from '@chakra-ui/react'
 
 
 function Header() {
