@@ -15,8 +15,8 @@ function Header() {
 
     return (
         <>
-            <Flex justifyContent="center" alignItems="center">
-                <HStack spacing='63px'>
+            <Flex justifyContent="center" alignItems="center" paddingY={21}>
+                <HStack spacing='25px'>
                     <Container maxWidth="202px" maxHeight="78px" flexShrink={0}>
                         <img src={logo} alt="Little Lemon Logo"/>
                     </Container>                    
