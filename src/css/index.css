@@ -35,6 +35,7 @@ h2 {
 
 /* For Section Title */
 h3 {
+  color: #495E57;
   font-family: 'Karla', sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -42,6 +43,7 @@ h3 {
   line-height: normal;
   /* text-transform: uppercase; */
 }
+
 
 /* Lead text! Use this for descriptive items to catch attention! e.g. home page or CTA (Call to action) */
 h4 {
@@ -97,9 +99,11 @@ p {
   gap: 28px;
 }
 
-.little_lemon_logo {
-  width: 202px;
-  height: 76px;
+.button {
+  border-radius: 16px;
+  background: #F4CE14;
+  width: 200px;
+  height: 60px;
   flex-shrink: 0;
 }
 
@@ -115,6 +119,13 @@ p {
   line-height: normal;
 }
 
+.hero_image {
+  width: 330px;
+  height: 355px;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
 .backstory-image {
   
   width: 276px;
@@ -126,9 +137,8 @@ p {
   flex-shrink: 0;
 }
 
-.alt-logo {
-  width: 162px;
-  height: 279px;
+/* .little_lemon_logo {
+  width: 202px;
+  height: 76px;
   flex-shrink: 0;
-  background: url('../images/alt-logo.png'), lightgray 50% / cover no-repeat;
-}
+} */
