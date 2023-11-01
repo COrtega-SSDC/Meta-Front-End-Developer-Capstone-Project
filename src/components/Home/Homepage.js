@@ -6,12 +6,12 @@ import Backstory from './Backstory';
 function Homepage() {
 
     return (
-        <div className='Homepage'>
+        < >
             <Hero />
             <Specials />
             <Testimonials/>
             <Backstory/>
-        </div>
+        </>
 
     );
 
