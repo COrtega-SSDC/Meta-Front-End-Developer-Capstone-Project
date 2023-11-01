@@ -5,7 +5,7 @@ import LinkedIn from '../../images/linkedin.png'
 
 import logo from '../../images/alt-logo.png'
 
-import { HStack, Flex, Container, VStack } from '@chakra-ui/react'
+import { HStack, Box, VStack } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 
@@ -22,6 +22,7 @@ function Footer() {
 
     return (
         <>
+            <Box>
                 <HStack bg='#333333' justifyContent="center" paddingY="95px">
                     <img src={logo} alt="Alternate Little Lemon Logo" />
                     <VStack align="flex-start">
@@ -57,7 +58,7 @@ function Footer() {
                         </ul>
                     </VStack>
                 </HStack>
-
+            </Box>
         </>
     );
 
