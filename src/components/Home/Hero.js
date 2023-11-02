@@ -1,32 +1,82 @@
 
-import { Button, HStack, VStack, Box } from '@chakra-ui/react'
+import { Button, HStack, VStack, Box, Flex, Heading, Spacer } from '@chakra-ui/react'
 
 import img from '../../images/restauranfood.jpg'
 
 function Hero() {
 
-    const style = {
-        color: '#EDEFEE'
+    const header = {
+        color: '#F4CE14',
+        fontFamily: 'Markazi Text',
+        fontSize: 64,
+        fontWeight: 500,
+        wordWrap: 'break-word'
+    }
+
+    const subhead = {
+        color: '#EDEFEE',
+        fontFamily: 'Markazi Text',
+        fontSize: 40,
+        fontWeight: 400,
+        wordWrap: 'break-word'
+    }
+
+    const button_style = {
+        borderRadius: 16,
+        width: 200,
+        height: 60,
+        flexShrink: 0,
+        fontSize: 18,
+        fontFamily: 'Karla',
+        fontWeight: 700,
+        wordWrap: 'break-word'
     }
 
     return (
         <>
-            <HStack spacing='239px' justifyContent="center" bg='#495E57'>
-                <VStack alignItems="flex-start">
-                    <h1 style={{color: '#F4CE14'}}>Little Lemon</h1>
-                    <h2 style={style}>Chicago</h2>
-                    <Box w='291px' h='79px'>
-                        <h3 style={style}>
-                            We are a family owned
-                            Mediterranean restaurant,
-                            focused on traditional recipes served with a modern
-                            twist.
-                        </h3>
-                    </Box>
-                    <Button className='button'>Reserve a Table</Button>
-                </VStack>
-                <img src={img} alt='Chef holding plate of appetizers' className='hero_image' />
-            </HStack>
+            <Flex justifyContent="center" bg='#495E57' height="406px" margin="auto" >
+                <HStack spacing='239px'>
+                    <VStack width="291px" height="355px">
+                        <Box height="106px" width="280px" alignContent="flex-start">
+                            <Heading
+                                style={header}
+                            >
+                                Little Lemon
+                            </Heading>
+                            <Heading
+                                style={subhead}
+                            >
+                                Chicago
+                            </Heading>
+                        </Box>
+                        <Spacer />
+                        <Box w='291px' h='132px'>
+                            <h3 className='description'>
+                                We are a family owned
+                                Mediterranean restaurant,
+                                focused on traditional recipes served with a modern
+                                twist.
+                            </h3>
+                        </Box>
+                        <Spacer />
+                        <Button
+                            bgColor="#F4CE14"
+                            style={button_style}
+                        >
+                            Reserve a Table
+                        </Button>
+                    </VStack>
+                    <Box
+                        as='img'
+                        src={img}
+                        objectFit="cover"
+                        objectPosition="center"
+                        className='hero_image'
+                        alt='Chef holding a plate of appetizers from the neck down'
+                    />
+                </HStack>
+            </Flex>
+
 
         </>
     );
