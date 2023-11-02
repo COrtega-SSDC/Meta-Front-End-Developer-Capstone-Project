@@ -17,6 +17,13 @@ code {
     monospace;
 }
 
+/*CSS Classes*/
+
+/*******************************************
+*
+* General Tags
+*
+*******************************************/
 h1 {
   font-family: 'Markazi Text', serif;
   font-size: 64px;
@@ -84,28 +91,47 @@ p {
   line-height: normal;
 }
 
-.testimonial { /*need to add one for images in testimonials and the block layout*/
-  font-family: 'Karla', sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
+/*******************************************
+*
+* Header
+*
+*******************************************/
 
 .nav {
   display: flex;
   width: 640px;
-  align-items: flex-start;
   gap: 28px;
 }
 
-.button {
-  border-radius: 16px;
-  background: #F4CE14;
-  width: 200px;
-  height: 60px;
+.logo {
+  width: 202px;
+  height: 76px;
   flex-shrink: 0;
 }
+
+/*******************************************
+*
+* Hero
+*
+*******************************************/
+
+.hero_image {
+  width: 330px;
+  height: 355px;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+
+.description {
+  color: #EDEFEE;
+}
+
+/*******************************************
+*
+* Specials
+*
+*******************************************/
 
 .price {
   /* overflow: hidden; */
@@ -119,12 +145,25 @@ p {
   line-height: normal;
 }
 
-.hero_image {
-  width: 330px;
-  height: 355px;
-  flex-shrink: 0;
-  border-radius: 16px;
+/*******************************************
+*
+* Testimonials
+*
+*******************************************/
+
+.testimonial { /*need to add one for images in testimonials and the block layout*/
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
+
+/*******************************************
+*
+* Backstory
+*
+*******************************************/
 
 .backstory-image {
   
@@ -137,8 +176,5 @@ p {
   flex-shrink: 0;
 }
 
-/* .little_lemon_logo {
-  width: 202px;
-  height: 76px;
-  flex-shrink: 0;
-} */
+
+
