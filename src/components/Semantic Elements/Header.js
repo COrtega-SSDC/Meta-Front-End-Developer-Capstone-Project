@@ -6,14 +6,9 @@ import { HStack, Flex, Box } from '@chakra-ui/react'
 
 
 function Header() {
+   
 
     const style = {
-        width: '202px',
-        height: '76px',
-        flexShrink: 0
-    };
-
-    const flex_style = {
         justifyContent: "center",
         paddingBottom: 26,
         paddingTop: 21,
@@ -24,14 +19,14 @@ function Header() {
 
     return (
         <>
-            <Flex style={flex_style}>
+            <Flex style={style}>
                 <HStack spacing='63px'>
                     <Box as="img" 
                         src={logo} 
                         alt="Little Lemon Logo"
                         objectPosition="center"
                         objectFit="contain"
-                        style={style}
+                        className="logo"
                     />                    
                     <Nav />
                 </HStack>
