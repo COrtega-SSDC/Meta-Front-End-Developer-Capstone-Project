@@ -34,7 +34,7 @@ function Hero() {
 
     return (
         <>
-            <Flex justifyContent="center" bg='#495E57' height="406px" margin="auto" >
+            <Flex justifyContent="center" bg='#495E57' height="406px" marginTop="26px" >
                 <HStack spacing='239px'>
                     <VStack width="291px" height="355px">
                         <Box height="106px" width="280px" alignContent="flex-start">
