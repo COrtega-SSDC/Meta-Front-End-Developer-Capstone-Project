@@ -1,8 +1,10 @@
-import {Button, Heading, HStack, Spacer, Box} from '@chakra-ui/react'
+import { Button, Heading, HStack, Spacer, Box } from '@chakra-ui/react'
 
 import salad from '../../images/greek salad.jpg'
 import dessert from '../../images/lemon dessert.jpg'
 import bruschetta from '../../images/bruchetta.png'
+
+import { Link } from 'react-router-dom'
 
 function Specials() {
 
@@ -28,13 +30,15 @@ function Specials() {
     return (
         <>
             <HStack justifyContent="center" spacing="216px" paddingTop='75px' paddingBottom='51px'>
-                <Box as='h1' style={{color: 'black'}}>This week's specials!</Box>
-                <Button
-                    bgColor="#F4CE14"
-                    style={button_style}
-                >
-                    Online Menu
-                </Button>
+                <Box as='h1' style={{ color: 'black' }}>This week's specials!</Box>
+                <Link to="/order">
+                    <Button
+                        bgColor="#F4CE14"
+                        style={button_style}
+                    >
+                        Online Menu
+                    </Button>
+                </Link>
             </HStack>
             <Spacer />
             <HStack justifyContent="center" spacing='34.32px' paddingBottom='73px'>
