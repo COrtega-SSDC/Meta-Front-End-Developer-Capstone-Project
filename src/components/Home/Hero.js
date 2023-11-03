@@ -19,7 +19,7 @@ function Hero() {
 
     return (
         <>
-            <Flex justifyContent="center" bg='#495E57' height="406px" marginTop="26px" >
+            <Flex justifyContent="center" bg='#495E57' height="406px">
                 <HStack spacing='239px'>
                     <VStack width="291px" height="355px" align="flex-start">
                         <Box height="106px" width="280px">
