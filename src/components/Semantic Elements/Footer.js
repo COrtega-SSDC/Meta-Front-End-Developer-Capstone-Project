@@ -5,7 +5,7 @@ import LinkedIn from '../../images/linkedin.png'
 
 import logo from '../../images/alt-logo.png'
 
-import { HStack, Box, VStack } from '@chakra-ui/react'
+import { HStack, Flex, Box, VStack, Spacer } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 
@@ -22,11 +22,20 @@ function Footer() {
 
     return (
         <>
-            <Box>
-                <HStack bg='#333333' justifyContent="center" paddingY="95px">
-                    <img src={logo} alt="Alternate Little Lemon Logo" />
+            <Flex bg='#333333' justifyContent="center" paddingY="95px">
+                <HStack >
+                    <Box as='img'
+                        src={logo}
+                        width="162px"
+                        height="248px"
+                        objectFit="contain"
+                        objectPosition="center"
+                        flexShrink={0}
+                        alt='Alternate Little Lemon Logo'
+                    />
+                    <Spacer/>
                     <VStack align="flex-start">
-                        <h3>Doormat Navigation</h3>
+                        <Box as='h3' >Doormat Navigation</Box>
                         <Link to="/" style={style}>Home</Link>
                         <Link to="/about" style={style}>About</Link>
                         <Link to="/menu" style={style}>Menu</Link>
@@ -35,7 +44,7 @@ function Footer() {
                         <Link to="/login" style={style}>Login</Link>
                     </VStack>
                     <VStack align="flex-start">
-                        <h3>Contact Us</h3>
+                        <Box as='h3' >Contact Us</Box>
                         <p style={style}>Address: </p>
                         <p style={style}>1100 Hyde Park, Chicago, IL, 60615</p>
                         <p style={style}>Phone #: </p>
@@ -44,7 +53,7 @@ function Footer() {
                         <p style={style}>info@littlelemon.com</p>
                     </VStack>
                     <VStack align="flex-start">
-                        <h3>Social Media Links</h3>
+                        <Box as='h3' >Social Media Links</Box>
                         <ul title="Social Media Links">
                             <a href='https://www.facebook.com/LittleLemon' style={style} target="_blank" rel="noopener noreferrer">Facebook</a>
                             <li><img src={Facebook} alt="Little Lemon Logo" width="24px" height="24px" /></li>
@@ -58,7 +67,7 @@ function Footer() {
                         </ul>
                     </VStack>
                 </HStack>
-            </Box>
+            </Flex>
         </>
     );
 

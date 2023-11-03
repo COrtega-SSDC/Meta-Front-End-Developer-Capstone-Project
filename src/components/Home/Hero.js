@@ -1,25 +1,9 @@
 
-import { Button, HStack, VStack, Box, Flex, Heading, Spacer } from '@chakra-ui/react'
+import { Button, HStack, VStack, Box, Flex, Spacer } from '@chakra-ui/react'
 
 import img from '../../images/restauranfood.jpg'
 
 function Hero() {
-
-    const header = {
-        color: '#F4CE14',
-        fontFamily: 'Markazi Text',
-        fontSize: 64,
-        fontWeight: 500,
-        wordWrap: 'break-word'
-    }
-
-    const subhead = {
-        color: '#EDEFEE',
-        fontFamily: 'Markazi Text',
-        fontSize: 40,
-        fontWeight: 400,
-        wordWrap: 'break-word'
-    }
 
     const button_style = {
         borderRadius: 16,
@@ -38,25 +22,17 @@ function Hero() {
                 <HStack spacing='239px'>
                     <VStack width="291px" height="355px">
                         <Box height="106px" width="280px" alignContent="flex-start">
-                            <Heading
-                                style={header}
-                            >
-                                Little Lemon
-                            </Heading>
-                            <Heading
-                                style={subhead}
-                            >
-                                Chicago
-                            </Heading>
+                            <Box as='h1' >Little Lemon</Box>
+                            <Box as='h2' >Chicago</Box>
                         </Box>
                         <Spacer />
                         <Box w='291px' h='132px'>
-                            <h3 className='description'>
+                            <Box as='h4' style={{lineHeight: '28.125px'}}>
                                 We are a family owned
                                 Mediterranean restaurant,
                                 focused on traditional recipes served with a modern
                                 twist.
-                            </h3>
+                            </Box>
                         </Box>
                         <Spacer />
                         <Button

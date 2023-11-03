@@ -1,20 +1,11 @@
-import { Box, Flex, HStack, Heading, VStack } from '@chakra-ui/react'
+import { Box, Flex, HStack, VStack } from '@chakra-ui/react'
 
 function Testimonials() {
 
-
-    const head = {
-        fontFamily: 'Markazi Text',
-        fontSize: 64,
-        fontWeight: 400,
-        wordWrap: 'break-word'
-    }
     return (
         <Flex bg="#EDEFEE" height="590px" justifyContent="center">
             <VStack spacing="77px">
-                <Heading style={head} paddingTop="80px">
-                    Testimonials
-                </Heading>
+                <Box as='h1' style={{color: 'black', paddingTop: '80px'}}>Testimonials</Box>
                 <HStack spacing="20px">
                     <Box width="200px" height="175px" bg="#FFFFFF">
 
