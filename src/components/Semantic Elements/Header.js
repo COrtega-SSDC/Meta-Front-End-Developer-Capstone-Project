@@ -11,8 +11,8 @@ function Header() {
 
     const style = {
         justifyContent: "center",
-        paddingBottom: 26,
-        paddingTop: 49,
+        marginBottom: "26px",
+        marginTop: "21px",
         width: "905px",
         height: "78px",
         margin: "auto"
