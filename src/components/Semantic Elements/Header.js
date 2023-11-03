@@ -3,10 +3,11 @@ import Nav from "../Semantic Elements/Nav";
 
 import logo from '../../images/logo.png'
 import { HStack, Flex, Box } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 
 function Header() {
-   
+
 
     const style = {
         justifyContent: "center",
@@ -21,13 +22,15 @@ function Header() {
         <>
             <Flex style={style}>
                 <HStack spacing='63px'>
-                    <Box as="img" 
-                        src={logo} 
-                        alt="Little Lemon Logo"
-                        objectPosition="center"
-                        objectFit="contain"
-                        className="logo"
-                    />                    
+                    <Link to="/">
+                        <Box as="img"
+                            src={logo}
+                            alt="Little Lemon Logo"
+                            objectPosition="center"
+                            objectFit="contain"
+                            className="logo"
+                        />
+                    </Link>
                     <Nav />
                 </HStack>
             </Flex>
