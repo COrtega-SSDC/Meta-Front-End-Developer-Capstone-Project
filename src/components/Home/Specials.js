@@ -39,6 +39,7 @@ function Specials() {
                         Online Menu
                     </Button>
                 </Link>
+                <Spacer/>
             </HStack>
             <Spacer />
             <HStack justifyContent="center" spacing='34.32px' paddingBottom='73px'>
