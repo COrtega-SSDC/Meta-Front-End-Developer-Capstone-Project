@@ -37,7 +37,7 @@ function Specials() {
 
     return (
         <>
-            <HStack justifyContent="center" spacing="216px" paddingTop='75px' paddingBottom='51px'>
+            <HStack justifyContent="center" spacing="216px" marginTop='75px' marginBottom='51px'>
                 <Box as='h1' style={{ color: 'black' }}>This week's specials!</Box>
                 <Link to="/menu">
                     <Button
@@ -49,7 +49,7 @@ function Specials() {
                 </Link>
             </HStack>
             <Spacer />
-            <HStack justifyContent="center" spacing='34.32px' paddingBottom='73px'>
+            <HStack justifyContent="center" spacing='34.32px' marginBottom='73px'>
                 <Box width='264.667px' height='439px' flexShrink={0}>
                     <Box
                         as='img'
