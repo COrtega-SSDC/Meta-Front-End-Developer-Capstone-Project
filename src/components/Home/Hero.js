@@ -1,5 +1,5 @@
 
-import { Button, HStack, VStack, Box, Flex, Spacer } from '@chakra-ui/react'
+import { Button, HStack, VStack, Box, Flex, Spacer, Text } from '@chakra-ui/react'
 
 import img from '../../images/restauranfood.jpg'
 import { Link } from 'react-router-dom'
@@ -28,12 +28,12 @@ function Hero() {
                         </Box>
                         <Spacer />
                         <Box w='291px' h='132px'>
-                            <Box as='h4' style={{ lineHeight: '25.31px', textAlign: "left" }}>
+                            <Text as='h4' style={{ lineHeight: '25.31px', textAlign: "left" }}>
                                 We are a family owned
                                 Mediterranean restaurant,
                                 focused on traditional recipes served with a modern
                                 twist.
-                            </Box>
+                            </Text>
                         </Box>
                         <Spacer />
                         <Link to="/reservations">
