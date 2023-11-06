@@ -43,7 +43,7 @@ function Backstory() {
                         objectFit="cover"
                         objectPosition="center"
                         marginLeft="-185px"
-                        marginBottom="-97px"
+                        marginBottom="-60px"
                         borderRadius="16px"
                         border='1px black solid'
                         zIndex="1"
