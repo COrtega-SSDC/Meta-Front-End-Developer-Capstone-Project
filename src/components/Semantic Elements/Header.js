@@ -9,18 +9,16 @@ function Header() {
 
 
     const style = {
-        justifyContent: "center",
-        marginBottom: 16,
-        marginTop: 11,
         width: 905,
         height: 78,
-        margin: "auto"
+        paddingLeft: 23,
+        margin: "21px auto 24px auto"
     }
 
     return (
         <>
-            <Flex style={style}>
-                <HStack spacing='63px'>
+            <Flex  height="123px">
+                <HStack spacing='63px' style={style}>
                     <Link to="/">
                         <Box as="img"
                             src={logo}
