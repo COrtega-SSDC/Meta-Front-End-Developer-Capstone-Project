@@ -11,10 +11,10 @@ function Header() {
 
     const style = {
         justifyContent: "center",
-        marginBottom: "26px",
-        marginTop: "21px",
-        width: "905px",
-        height: "78px",
+        marginBottom: 16,
+        marginTop: 11,
+        width: 905,
+        height: 78,
         margin: "auto"
     }
 
