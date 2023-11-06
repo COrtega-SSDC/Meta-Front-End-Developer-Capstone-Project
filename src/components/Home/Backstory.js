@@ -7,7 +7,7 @@ function Backstory() {
 
     return (
         <Flex bg="#495E57" height="578px" justifyContent="center">
-            <HStack >
+            <HStack spacing="65px">
                 <VStack spacing={0} align="flex-start" textAlign="left" mt="-17px">
                     <Text as='h1' >Little Lemon</Text>
                     <Text as='h2' mt="-20px" mb="11px" >Chicago</Text>
@@ -30,8 +30,8 @@ function Backstory() {
                         height="336px"
                         objectFit="cover"
                         objectPosition="center"
-                        mb="-100px"
-                        marginLeft="227px"
+                        mb="-235px"
+                        marginLeft="155px"
                         borderRadius="16px"
                         border='1px black solid'
                         zIndex="2"
@@ -42,8 +42,8 @@ function Backstory() {
                         height="336px"
                         objectFit="cover"
                         objectPosition="center"
-                        marginLeft="-200px"
-                        marginBottom="36px"
+                        marginLeft="-185px"
+                        marginBottom="-97px"
                         borderRadius="16px"
                         border='1px black solid'
                         zIndex="1"
