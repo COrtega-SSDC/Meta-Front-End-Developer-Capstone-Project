@@ -1,4 +1,3 @@
-
 import Nav from "../Semantic Elements/Nav";
 
 import logo from '../../images/logo.png'
