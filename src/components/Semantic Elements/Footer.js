@@ -6,7 +6,7 @@ import TikTok from '../../images/tiktok_icon.png'
 
 import logo from '../../images/alt-logo.png'
 
-import { HStack, Flex, Box, VStack, Text, Spacer } from '@chakra-ui/react'
+import { HStack, Flex, Box, VStack, Text} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 
