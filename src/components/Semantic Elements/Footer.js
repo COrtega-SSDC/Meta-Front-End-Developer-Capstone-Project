@@ -17,9 +17,10 @@ function Footer() {
         fontSize: 18,
         fontFamily: 'Karla',
         fontWeight: '500',
-        // lineHeight: 23.40,
+        lineHeight: "130%",
         wordWrap: 'break-word',
         textAlign: "left"
+
     }
 
     return (
@@ -34,10 +35,9 @@ function Footer() {
                         objectPosition="center"
                         flexShrink={0}
                         alt='Alternate Little Lemon Logo'
-                        marginLeft="95px"
+                        marginLeft="40px"
                     />
-                    <Spacer width="69px"/>
-                    <VStack align="flex-start" width="128.43px" height="208px">
+                    <VStack align="flex-start" width="114px" height="184px" marginRight="105px" marginLeft="69px">
                         <Text as='h3' textAlign="left">Doormat Navigation</Text>
                         <Link to="/" style={style}>Home</Link>
                         <Link to="/about" style={style}>About</Link>
@@ -46,19 +46,16 @@ function Footer() {
                         <Link to="/order" style={style}>Order Online</Link>
                         <Link to="/login" style={style}>Login</Link>
                     </VStack>
-                    <Spacer width="123px"/>
-                    <VStack align="flex-start" width="199.05px" height="248px">
-                        <Text as='h3' >Contact Us</Text>
-                        <Text style={style}>Address: </Text>
-                        <Text style={style}>1100 Hyde Park, Chicago, IL, 60615</Text>
-                        <Text style={style}>Phone #: </Text>
-                        <Text style={style}>+1 (312) 555- 0142</Text>
-                        <Text style={style}>Email: </Text>
-                        <Text style={style}>info@littlelemon.com</Text>
+                    <VStack align="flex-start" width="185px" height="248px" mr="47px">
+                        <Text as='h3' mb="24px">Contact Us</Text>
+                        <Text style={style}>Address: <br></br> 1100 Hyde Park, Chicago, IL, 60615</Text>
+                        <Text></Text>
+                        <Text style={style}>Phone #: <br></br> +1 (312) 555-0142 </Text>
+                        <Text></Text>
+                        <Text style={style}>Email: <br></br> info@littlelemon.com</Text>
                     </VStack>
-                    <Spacer width="33px"/>
-                    <VStack align="flex-start">
-                        <Text as='h3' >Social Media Links</Text>
+                    <VStack align="flex-start" width="188px" height="168px">
+                        <Text as='h3' mb="24px" >Social Media Links</Text>
                         <ul style={{ listStyleType: 'none' }}>
                             <li>
                                 <a href='https://www.facebook.com/LittleLemon' target="_blank" rel="noopener noreferrer">
