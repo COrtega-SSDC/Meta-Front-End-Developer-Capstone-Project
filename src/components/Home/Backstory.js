@@ -1,4 +1,4 @@
-import { Flex, VStack, Box, HStack, Text, Spacer } from '@chakra-ui/react'
+import { Flex, VStack, Box, HStack, Text} from '@chakra-ui/react'
 
 import brothers from '../../images/Mario and Adrian A.jpg'
 import saltBae from '../../images/restaurant chef B.jpg'
