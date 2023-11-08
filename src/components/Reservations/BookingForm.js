@@ -1,31 +1,76 @@
+import { Button, Flex, FormControl, FormLabel, Input, Select, VStack } from "@chakra-ui/react";
+import { useState } from "react";
 
 
-function BookingForm() {
+function BookingForm({availableTimes, dispatch}) {
+
+    const style = {
+        maxWidth: 200,
+        gap: 15,
+        margin: "auto"
+    }
+
+    //States 
+    const [date, setDate] = useState('')
+    const [time, setTime] = useState('')
+    const [guests, setGuests] = useState(1)
+    const [occasion, setOccasion] = useState('')
+
+
+    const handleDate = (e) => {
+        setDate(e.target.value)
+        dispatch({ type: 'UPDATE_TIMES', payload: e.target.value });
+    }
+
+    const handleTime = (e) => setTime(e.target.value)
+
+    const handleGuests = (e) => setGuests(e.target.value)
+
+    const handleOccasion = (e) => setOccasion(e.target.value)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+    }
+
 
     return (
-        <div>
-            <form style="display: grid; max-width: 200px; gap: 20px">
-                <label for="res-date">Choose date</label>
-                <input type="date" id="res-date" />
-                <label for="res-time">Choose time</label>
-                <select id="res-time ">
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option>
-                </select>
-                <label for="guests">Number of guests</label>
-                <input type="number" placeholder="1" min="1" max="10" id="guests" />
-                <label for="occasion">Occasion</label>
-                <select id="occasion">
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                </select>
-                <input type="submit" value="Make Your reservation" />
-            </form>
-        </div>
+        <>
+            <Flex justifyContent="center" alignItems="center">
+                <form onSubmit={handleSubmit}>
+                    <VStack style={style}>
+                        <FormControl>
+                            <FormLabel htmlFor="res-date">Choose Date</FormLabel>
+                            <Input type="date" id="res-date" value={date} onChange={handleDate} />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel htmlFor="res-time">Choose Time</FormLabel>
+                            <Select id="res-time" value={time} onChange={handleTime}>
+                                {availableTimes.map((availableTime) => (
+                                    <option key={availableTime} value={availableTime}>
+                                        {availableTime}
+                                    </option>
+                                ))}
+                            </Select>
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel htmlFor="guests">Number of Guests</FormLabel>
+                            <Input type="number" min={1} max={10} id="guests" value={guests} onChange={handleGuests} />
+                        </FormControl>
+                        <FormControl>
+                            <FormLabel htmlFor="occasion">Occasion</FormLabel>
+                            <Select id="occasion" value={occasion} onChange={handleOccasion}>
+                                <option>Birthday</option>
+                                <option>Anniversary</option>
+                            </Select>
+                        </FormControl>
+                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14">Book Now!</Button>
+                    </VStack>
+                </form>
+
+            </Flex>
+
+        </>
     );
 
 }
