@@ -25,6 +25,7 @@ code {
 *
 *******************************************/
 h1 {
+  color: #F4CE14;
   font-family: 'Markazi Text', serif;
   font-size: 64px;
   font-style: normal;
@@ -33,6 +34,7 @@ h1 {
 }
 
 h2 {
+  color: #EDEFEE;
   font-family: 'Markazi Text', serif;
   font-size: 40px;
   font-style: normal;
@@ -54,6 +56,7 @@ h3 {
 
 /* Lead text! Use this for descriptive items to catch attention! e.g. home page or CTA (Call to action) */
 h4 {
+  color: #EDEFEE;
   font-family: 'Karla', sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -63,6 +66,8 @@ h4 {
 
 /* For Card Title */
 h5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: 'Karla', sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -82,9 +87,7 @@ h6 {
 
 p {
   font-family: 'Karla', sans-serif;
-  /* overflow: hidden; */
   color: #495E57;
-  white-space: nowrap;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -133,6 +136,12 @@ p {
 *
 *******************************************/
 
+.specials_image {
+  height: 185.258px;
+  width: 264.66742px;
+  border-radius: 16px 16px 0px 0px;
+}
+
 .price {
   /* overflow: hidden; */
   color: #EE9972; 
@@ -151,12 +160,18 @@ p {
 *
 *******************************************/
 
-.testimonial { /*need to add one for images in testimonials and the block layout*/
+.review {
   font-family: 'Karla', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.block_img {
+  width: 47px;
+  height: 46px;
+  flex-shrink: 0;
 }
 
 /*******************************************
