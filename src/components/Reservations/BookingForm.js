@@ -1,9 +1,9 @@
 import { Button, Flex, FormControl, FormLabel, Input, Select, VStack } from "@chakra-ui/react";
 import { useState } from "react";
+import { fetchAPI, submitAPI } from "../../api";
 
 
-function BookingForm({availableTimes, dispatch}) {
-
+function BookingForm({ availableTimes, dispatch }) {
     const style = {
         maxWidth: 200,
         gap: 15,
@@ -17,12 +17,21 @@ function BookingForm({availableTimes, dispatch}) {
     const [occasion, setOccasion] = useState('')
 
 
-    const handleDate = (e) => {
-        setDate(e.target.value)
-        dispatch({ type: 'UPDATE_TIMES', payload: e.target.value });
+    const handleDateChange = (e) => {
+        const newDate = e.target.value;
+        setDate(newDate);
+    
+        fetchAPI(newDate)
+            .then(times => {
+                dispatch({ type: 'SET_TIMES', payload: times });
+            })
+            .catch(error => {
+                console.error('Failed to fetch times for the selected date: ', error);
+            });
+    };
+    const handleTime = (e) => {
+        setTime(e.target.value)
     }
-
-    const handleTime = (e) => setTime(e.target.value)
 
     const handleGuests = (e) => setGuests(e.target.value)
 
@@ -41,7 +50,7 @@ function BookingForm({availableTimes, dispatch}) {
                     <VStack style={style}>
                         <FormControl>
                             <FormLabel htmlFor="res-date">Choose Date</FormLabel>
-                            <Input type="date" id="res-date" value={date} onChange={handleDate} />
+                            <Input type="date" id="res-date" value={date} onChange={handleDateChange} />
                         </FormControl>
                         <FormControl>
                             <FormLabel htmlFor="res-time">Choose Time</FormLabel>
