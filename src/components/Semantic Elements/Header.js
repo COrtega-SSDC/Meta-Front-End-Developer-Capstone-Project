@@ -17,20 +17,23 @@ function Header() {
 
     return (
         <>
-            <Flex  height="123px">
-                <HStack spacing='63px' style={style}>
-                    <Link to="/">
-                        <Box as="img"
-                            src={logo}
-                            alt="Little Lemon Logo"
-                            objectPosition="center"
-                            objectFit="contain"
-                            className="logo"
-                        />
-                    </Link>
-                    <Nav />
-                </HStack>
-            </Flex>
+            <header>
+                <Flex as='nav' height="123px">
+                    <HStack spacing='63px' style={style}>
+                        <Link to="/">
+                            <Box as="img"
+                                src={logo}
+                                alt="Little Lemon Logo"
+                                objectPosition="center"
+                                objectFit="contain"
+                                className="logo"
+                            />
+                        </Link>
+                        <Nav />
+                    </HStack>
+                </Flex>
+
+            </header>
 
         </>
     );
