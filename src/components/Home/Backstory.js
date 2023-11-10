@@ -39,6 +39,7 @@ function Backstory() {
                             borderRadius="16px"
                             border='1px black solid'
                             zIndex="2"
+                            alt='Mario and Adrian smiling and looking at each other'
                         />
                         <Box as='img'
                             src={saltBae}
@@ -51,6 +52,7 @@ function Backstory() {
                             borderRadius="16px"
                             border='1px black solid'
                             zIndex="1"
+                            alt='Adrian sprinkilng seasoning on salad'
                         />
                     </VStack>
                 </section>

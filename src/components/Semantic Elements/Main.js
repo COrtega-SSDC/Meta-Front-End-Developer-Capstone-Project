@@ -34,13 +34,13 @@ function Main() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/about" element={<BookingPage />}></Route>
-        <Route path="/menu" element={<BookingPage />}></Route>
-        <Route path="/reservations" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>}></Route>
-        <Route path="/order" element={<BookingPage />}></Route>
-        <Route path="/login" element={<BookingPage />}></Route>
-        <Route path="/confirmation" element={<ConfirmedBooking />}></Route>
+        <Route path="/" title="homepage" element={<HomePage />}></Route>
+        <Route path="/about" title="about Little Lemon" element={<BookingPage />}></Route>
+        <Route path="/menu" title="Little Lemon Menu" element={<BookingPage />}></Route>
+        <Route path="/reservations" title="Reserve a Table" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>}></Route>
+        <Route path="/order" title="Order Online" element={<BookingPage />}></Route>
+        <Route path="/login" title="Login" element={<BookingPage />}></Route>
+        <Route path="/confirmation" title=" Reservation Confirmed" element={<ConfirmedBooking />}></Route>
       </Routes>
     </>
   );

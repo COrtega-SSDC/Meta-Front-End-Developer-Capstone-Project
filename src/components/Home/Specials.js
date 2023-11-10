@@ -45,6 +45,7 @@ function Specials() {
                             <Button
                                 bgColor="#F4CE14"
                                 style={button_style}
+                                role='button'
                             >
                                 Online Menu
                             </Button>

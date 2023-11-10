@@ -47,7 +47,7 @@ function Hero() {
                             </Link>
                         </VStack>
                     </section>
-                    <section>
+                    <section aria-hidden="true">
                         <Box
                             as='img'
                             src={img}

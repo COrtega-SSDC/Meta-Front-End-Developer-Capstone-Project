@@ -59,7 +59,7 @@ function Footer() {
                             <Text as='h3' mb="24px" >Social Media Links</Text>
                             <ul style={{ listStyleType: 'none' }}>
                                 <li>
-                                    <a href='https://www.facebook.com/LittleLemon' target="_blank" rel="noopener noreferrer">
+                                    <a href='https://www.facebook.com/LittleLemon' target="_blank" rel="noopener noreferrer" alt="Follow us on Facebook">
                                         <HStack>
                                             <img src={Facebook} alt="Facebook" width="24px" height="24px" />
                                             <Text style={style}>Facebook</Text>
@@ -67,7 +67,7 @@ function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='https://www.twitter.com/LittleLemon' target="_blank" rel="noopener noreferrer">
+                                    <a href='https://www.twitter.com/LittleLemon' target="_blank" rel="noopener noreferrer" alt="Follow us on Twitter">
                                         <HStack>
                                             <img src={Twitter} alt="Twitter" width="24px" height="24px" />
                                             <Text style={style}>Twitter</Text>
@@ -75,7 +75,7 @@ function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='https://www.instagram.com/LittleLemon' target="_blank" rel="noopener noreferrer">
+                                    <a href='https://www.instagram.com/LittleLemon' target="_blank" rel="noopener noreferrer" alt="Follow us on Instagram">
                                         <HStack>
                                             <img src={Insta} alt="Instagram" width="24px" height="24px" />
                                             <Text style={style}>Instagram</Text>
@@ -83,7 +83,7 @@ function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='https://www.linkedin.com/LittleLemon' target="_blank" rel="noopener noreferrer">
+                                    <a href='https://www.linkedin.com/LittleLemon' target="_blank" rel="noopener noreferrer" alt="Follow us on LinkedIn">
                                         <HStack>
                                             <img src={LinkedIn} alt="LinkedIn" width="24px" height="24px" />
                                             <Text style={style}>LinkedIn</Text>
@@ -91,7 +91,7 @@ function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='https://www.tiktok.com/LittleLemon' target="_blank" rel="noopener noreferrer">
+                                    <a href='https://www.tiktok.com/LittleLemon' target="_blank" rel="noopener noreferrer" alt="Follow us on TikTok">
                                         <HStack>
                                             <img src={TikTok} alt="TikTok" width="24px" height="24px" />
                                             <Text style={style}>TikTok</Text>
