@@ -51,77 +51,85 @@ function Specials() {
                         </Link>
                     </HStack>
                     <HStack spacing='34.32px'>
-                        <Box width='264.667px' height='439px' flexShrink={0}>
-                            <Box
-                                as='img'
-                                src={salad}
-                                className='specials_image'
-                            />
-                            <Box height='253.742px' bg="#EDEFEE">
-                                <HStack justifyContent="center" spacing="68.85px">
-                                    <Box as='h5' mt="19.32px">Greek Salad</Box>
-                                    <Heading style={price} mt="20.19">$12.99</Heading>
-                                </HStack>
-                                <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
-                                    The famous greek salad of crispy lettuce, peppers,
-                                    olives and our Chicago style feta cheese,
-                                    garnished with crunchy garlic and rosemary croutons.
+                        <article>
+                            <Box width='264.667px' height='439px' flexShrink={0}>
+                                <Box
+                                    as='img'
+                                    src={salad}
+                                    className='specials_image'
+                                />
+                                <Box height='253.742px' bg="#EDEFEE">
+                                    <HStack justifyContent="center" spacing="68.85px">
+                                        <Box as='h5' mt="19.32px">Greek Salad</Box>
+                                        <Heading style={price} mt="20.19">$12.99</Heading>
+                                    </HStack>
+                                    <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
+                                        The famous greek salad of crispy lettuce, peppers,
+                                        olives and our Chicago style feta cheese,
+                                        garnished with crunchy garlic and rosemary croutons.
+                                    </Box>
+                                    <HStack ml="25.01px" mb="29.29px" spacing={3}>
+                                        <Heading style={delivery} mt="17.56px" >Order a delivery </Heading>
+                                        <Link to="/order">
+                                            <Box as='img' src={bike} mt="21.07px" />
+                                        </Link>
+                                    </HStack>
                                 </Box>
-                                <HStack ml="25.01px" mb="29.29px" spacing={3}>
-                                    <Heading style={delivery} mt="17.56px" >Order a delivery </Heading>
-                                    <Link to="/order">
-                                        <Box as='img' src={bike} mt="21.07px" />
-                                    </Link>
-                                </HStack>
                             </Box>
-                        </Box>
-                        <Box width='264.667px' height='439px' flexShrink={0}>
-                            <Box
-                                as='img'
-                                src={bruschetta}
-                                className='specials_image'
-                            />
-                            <Box height='253.742px' bg="#EDEFEE">
-                                <HStack justifyContent="center" spacing="83.85px">
-                                    <Box as='h5' mt="19.32px">Bruchetta</Box>
-                                    <Heading style={price} mt="20.19">$5.99</Heading>
-                                </HStack>
-                                <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
-                                    Our Bruschetta is made from grilled bread that has been smeared with garlic
-                                    and seasoned with salt and olive oil.
+                        </article>
+                        <article>
+                            <Box width='264.667px' height='439px' flexShrink={0}>
+                                <Box
+                                    as='img'
+                                    src={bruschetta}
+                                    className='specials_image'
+                                />
+                                <Box height='253.742px' bg="#EDEFEE">
+                                    <HStack justifyContent="center" spacing="83.85px">
+                                        <Box as='h5' mt="19.32px">Bruchetta</Box>
+                                        <Heading style={price} mt="20.19">$5.99</Heading>
+                                    </HStack>
+                                    <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
+                                        Our Bruschetta is made from grilled bread that has been smeared with garlic
+                                        and seasoned with salt and olive oil.
+                                    </Box>
+                                    <HStack ml="25.01px" mb="29.29px" spacing={3}>
+                                        <Heading style={delivery} mt="17.56px" >Order a delivery </Heading>
+                                        <Link to="/order">
+                                            <Box as='img' src={bike} mt="21.07px" />
+                                        </Link>
+                                    </HStack>
                                 </Box>
-                                <HStack ml="25.01px" mb="29.29px" spacing={3}>
-                                    <Heading style={delivery} mt="17.56px" >Order a delivery </Heading>
-                                    <Link to="/order">
-                                        <Box as='img' src={bike} mt="21.07px" />
-                                    </Link>
-                                </HStack>
                             </Box>
-                        </Box>
-                        <Box width='264.667px' height='439px' flexShrink={0}>
-                            <Box
-                                as='img'
-                                src={dessert}
-                                className='specials_image'
-                                objectFit="cover"
-                            />
-                            <Box height='253.742px' bg="#EDEFEE">
-                                <HStack justifyContent="center" spacing="42.85px">
-                                    <Box as='h5' mt="19.32px">Lemon Dessert</Box>
-                                    <Heading style={price} mt="20.19">$5.00</Heading>
-                                </HStack>
-                                <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
-                                    This comes straight from grandma’s recipe book,
-                                    every last ingredient has been sourced and is as authentic as can be imagined.
+                        </article>
+
+                        <article>
+                            <Box width='264.667px' height='439px' flexShrink={0}>
+                                <Box
+                                    as='img'
+                                    src={dessert}
+                                    className='specials_image'
+                                    objectFit="cover"
+                                />
+                                <Box height='253.742px' bg="#EDEFEE">
+                                    <HStack justifyContent="center" spacing="42.85px">
+                                        <Box as='h5' mt="19.32px">Lemon Dessert</Box>
+                                        <Heading style={price} mt="20.19">$5.00</Heading>
+                                    </HStack>
+                                    <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
+                                        This comes straight from grandma’s recipe book,
+                                        every last ingredient has been sourced and is as authentic as can be imagined.
+                                    </Box>
+                                    <HStack ml="25.01px" mb="29.29px" spacing={3}>
+                                        <Heading style={delivery} mt="17.56px" >Order a delivery </Heading>
+                                        <Link to="/order">
+                                            <Box as='img' src={bike} mt="21.07px" />
+                                        </Link>
+                                    </HStack>
                                 </Box>
-                                <HStack ml="25.01px" mb="29.29px" spacing={3}>
-                                    <Heading style={delivery} mt="17.56px" >Order a delivery </Heading>
-                                    <Link to="/order">
-                                        <Box as='img' src={bike} mt="21.07px" />
-                                    </Link>
-                                </HStack>
                             </Box>
-                        </Box>
+                        </article>
+
                     </HStack>
                 </VStack>
             </Flex>

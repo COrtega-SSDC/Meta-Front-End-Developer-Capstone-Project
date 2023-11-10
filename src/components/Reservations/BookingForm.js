@@ -1,9 +1,9 @@
 import { Button, Flex, FormControl, FormLabel, Input, Select, VStack } from "@chakra-ui/react";
-import { useState } from "react";
-import { fetchAPI, submitAPI } from "../../api";
+import { useState, useEffect } from "react";
+import { fetchAPI} from "../../api";
 
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
     const style = {
         maxWidth: 200,
         gap: 15,
@@ -15,6 +15,8 @@ function BookingForm({ availableTimes, dispatch }) {
     const [time, setTime] = useState('')
     const [guests, setGuests] = useState(1)
     const [occasion, setOccasion] = useState('')
+
+    const [isFormValid, setIsFormValid] = useState(false);
 
 
     const handleDateChange = (e) => {
@@ -37,16 +39,26 @@ function BookingForm({ availableTimes, dispatch }) {
 
     const handleOccasion = (e) => setOccasion(e.target.value)
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
+    const handleSubmit = e => {
+        e.preventDefault();
+        const formData = { date, time, guests, occasion };
+        submitForm(formData); // Call the submitForm function passed via props
     }
+
+    useEffect(() => {
+        const validateForm = () => {
+          const isValid = date && time && guests > 0;
+          setIsFormValid(isValid);
+        };
+    
+        validateForm();
+      }, [date, time, guests]);
 
 
     return (
         <>
             <Flex justifyContent="center" alignItems="center">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} noValidate>
                     <VStack style={style}>
                         <FormControl>
                             <FormLabel htmlFor="res-date">Choose Date</FormLabel>
@@ -64,16 +76,18 @@ function BookingForm({ availableTimes, dispatch }) {
                         </FormControl>
                         <FormControl>
                             <FormLabel htmlFor="guests">Number of Guests</FormLabel>
-                            <Input type="number" min={1} max={10} id="guests" value={guests} onChange={handleGuests} />
+                            <Input type="number" min={1} max={10} id="guests" value={guests} onChange={handleGuests} required/>
                         </FormControl>
                         <FormControl>
                             <FormLabel htmlFor="occasion">Occasion</FormLabel>
                             <Select id="occasion" value={occasion} onChange={handleOccasion}>
+                                <option disabled>Please Select</option>
                                 <option>Birthday</option>
                                 <option>Anniversary</option>
+                                <option>Graduation</option>
                             </Select>
                         </FormControl>
-                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14">Book Now!</Button>
+                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14" isDisabled={!isFormValid}>Book Now!</Button>
                     </VStack>
                 </form>
 

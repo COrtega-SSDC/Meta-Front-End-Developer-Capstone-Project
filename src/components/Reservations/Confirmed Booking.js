@@ -1,10 +1,14 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
 
-function ConfirmedBooking () {
+function ConfirmedBooking() {
     return (
         <>
-            <Flex>
-                <Heading as='h1'>Reservation confirmed</Heading>
+            <Flex justifyContent="center" mb="100px" alignItems="center">
+                <VStack>
+                    <Heading as='h1' color="black">Reservation confirmed</Heading>
+                    <Text>We will send you an email confirmation shortly</Text>
+                </VStack>
+
             </Flex>
         </>
     )
