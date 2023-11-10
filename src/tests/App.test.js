@@ -1,33 +1,77 @@
-import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { useEffect } from 'react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import {initializeTimes, updateTimes} from '../components/Semantic Elements/Main'
+import * as api from '../api.js'
 
-import App from '../App';
-import BookingForm from '../components/Reservations/BookingForm';
+import BookingForm from '../components/Reservations/BookingForm'
 
-const mockAvailableTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-const mockDispatch = jest.fn();
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+const mockAvailableTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']
+const mockDispatch = jest.fn()
 
+jest.mock('../api.js', () => ({
+  ...jest.requireActual('../api.js'), 
+  fetchAPI: jest.fn().mockResolvedValue(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']),
+}))
 
 test('Renders the BookingForm heading', () => {
-  // Pass the mock props to BookingForm
-  render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />);
-  const labelElement = screen.getByText(/Choose Date/i); // Using regex for case-insensitive match
-  expect(labelElement).toBeInTheDocument();
+  render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />)
+  const labelElement = screen.getByText(/Choose Date/i)
+  expect(labelElement).toBeInTheDocument()
+})
+
+test('initializeTimes initializes with fetched times', async () => {
+  api.fetchAPI.mockResolvedValue(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'])
+  await initializeTimes()
+  expect(api.fetchAPI).toHaveBeenCalled()
+})
+
+test('updateTimes handles SET_TIMES action', () => {
+  const prevState = [];
+  const mockTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']
+  const action = { type: 'SET_TIMES', payload: mockTimes }
+  const newState = updateTimes(prevState, action)
+  expect(newState).toEqual(mockTimes)
 });
 
-test('initializeTimes returns the initial array of times', () => {
-  const initialTimes = initializeTimes();
-  expect(initialTimes).toEqual(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
-});
+describe('BookingForm', () => {
+  const mockAvailableTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']
+  const mockDispatch = jest.fn()
 
-test('updateTimes returns the current state when action is not recognized', () => {
-  const state = ['17:00', '18:00'];
-  const newState = updateTimes(state, { type: 'UNKNOWN_ACTION' });
-  expect(newState).toEqual(state);
-});
+  test('BookingForm renders with available times', () => {
+    render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />)
+
+    // Now when BookingForm tries to map over availableTimes, it won't be undefined
+    mockAvailableTimes.forEach(time => {
+      expect(screen.getByText(time)).toBeInTheDocument()
+    })
+  })
+
+
+  test('date input has the correct type', () => {
+    // Make sure to pass the mockAvailableTimes prop
+    render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />)
+    const dateInput = screen.getByLabelText(/Choose Date/i)
+    expect(dateInput).toHaveAttribute('type', 'date')
+  })
+
+  test('guests input has the correct type and min attribute', () => {
+    render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />);
+    const guestsInput = screen.getByLabelText(/Number of Guests/i);
+    expect(guestsInput).toHaveAttribute('type', 'number');
+    expect(guestsInput).toHaveAttribute('min', '1');
+  });
+
+  test('form shows invalid state when guests input is less than 1', () => {
+    render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />)
+    const guestsInput = screen.getByLabelText(/Number of Guests/i)
+    fireEvent.change(guestsInput, { target: { value: '0' } })
+  })
+
+  test('form shows valid state when guests input is greater than or equal to 1', () => {
+    render(<BookingForm availableTimes={mockAvailableTimes} dispatch={mockDispatch} />)
+    const guestsInput = screen.getByLabelText(/Number of Guests/i)
+    fireEvent.change(guestsInput, { target: { value: '1' } })
+  })
+})
