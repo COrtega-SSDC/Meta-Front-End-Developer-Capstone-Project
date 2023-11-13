@@ -1,6 +1,6 @@
-import { Button, Flex, FormControl, FormLabel, Input, Select, VStack } from "@chakra-ui/react";
+import { Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, Select, VStack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { fetchAPI} from "../../api";
+import { fetchAPI } from "../../api";
 
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
@@ -17,19 +17,40 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [occasion, setOccasion] = useState('')
 
     const [isFormValid, setIsFormValid] = useState(false);
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        let newErrors = {};
+        if (!date) newErrors.date = "Date is required";
+        if (!time) newErrors.time = "Time is required";
+        if (guests < 1) newErrors.guests = "At least one guest is required";
+        if (!occasion) newErrors.occasion = "Occasion is required";
+
+        setErrors(newErrors);
+        setIsFormValid(Object.keys(newErrors).length === 0);
+    };
 
 
     const handleDateChange = (e) => {
         const newDate = e.target.value;
         setDate(newDate);
-    
-        fetchAPI(newDate)
-            .then(times => {
-                dispatch({ type: 'SET_TIMES', payload: times });
-            })
-            .catch(error => {
-                console.error('Failed to fetch times for the selected date: ', error);
-            });
+
+        const selectedDate = new Date(newDate);
+
+        const currentDate = new Date();
+
+        if (selectedDate < currentDate) {
+            console.error('Selected date is in the past');
+            setDate('');
+        } else {
+            fetchAPI(newDate)
+                .then(times => {
+                    dispatch({ type: 'SET_TIMES', payload: times });
+                })
+                .catch(error => {
+                    console.error('Failed to fetch times for the selected date: ', error);
+                });
+        }
     };
     const handleTime = (e) => {
         setTime(e.target.value)
@@ -41,18 +62,31 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        const formData = { date, time, guests, occasion };
-        submitForm(formData); // Call the submitForm function passed via props
+        validateForm();
+        if (isFormValid) {
+            const formData = { date, time, guests, occasion };
+            submitForm(formData);
+        }
     }
 
-    useEffect(() => {
-        const validateForm = () => {
-          const isValid = date && time && guests > 0;
-          setIsFormValid(isValid);
-        };
-    
-        validateForm();
-      }, [date, time, guests]);
+    function getCurrentDate() {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    useEffect(validateForm, [date, time, guests, occasion]);
+
+    // useEffect(() => {
+    //     const validateForm = () => {
+    //       const isValid = date && time && guests > 0;
+    //       setIsFormValid(isValid);
+    //     };
+
+    //     validateForm();
+    //   }, [date, time, guests]);
 
 
     return (
@@ -60,32 +94,36 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             <Flex justifyContent="center" alignItems="center">
                 <form onSubmit={handleSubmit} noValidate>
                     <VStack style={style}>
-                        <FormControl>
+                        <FormControl isInvalid={!!errors.date}>
                             <FormLabel htmlFor="res-date">Choose Date</FormLabel>
-                            <Input type="date" id="res-date" value={date} onChange={handleDateChange} />
-                        </FormControl>
-                        <FormControl>
+                            <Input type="date" id="res-date" value={date} onChange={handleDateChange} aria-live="polite" required min={getCurrentDate()} />
+                            {errors.date && <FormErrorMessage id="date-error">{errors.date}</FormErrorMessage>}
+                        </FormControl >
+                        <FormControl isInvalid={!!errors.time}>
                             <FormLabel htmlFor="res-time">Choose Time</FormLabel>
-                            <Select id="res-time" value={time} onChange={handleTime}>
+                            <Select id="res-time" value={time} onChange={handleTime} aria-live="polite">
                                 {availableTimes.map((availableTime) => (
                                     <option key={availableTime} value={availableTime}>
                                         {availableTime}
                                     </option>
                                 ))}
                             </Select>
+                            {errors.time && <FormErrorMessage id="time-error">{errors.time}</FormErrorMessage>}
                         </FormControl>
-                        <FormControl>
+                        <FormControl isInvalid={!!errors.guests}>
                             <FormLabel htmlFor="guests">Number of Guests</FormLabel>
-                            <Input type="number" min={1} max={10} id="guests" value={guests} onChange={handleGuests} required/>
+                            <Input type="number" min={1} max={10} id="guests" value={guests} onChange={handleGuests} aria-live="polite" required />
+                            {errors.guests && <FormErrorMessage id="guest-error">{errors.guests}</FormErrorMessage>}
                         </FormControl>
-                        <FormControl>
+                        <FormControl isInvalid={!!errors.occasion}>
                             <FormLabel htmlFor="occasion">Occasion</FormLabel>
-                            <Select id="occasion" value={occasion} onChange={handleOccasion}>
+                            <Select id="occasion" value={occasion} onChange={handleOccasion} aria-live="polite" required>
                                 <option disabled>Please Select</option>
                                 <option>Birthday</option>
                                 <option>Anniversary</option>
                                 <option>Graduation</option>
                             </Select>
+                            {errors.occasion && <FormErrorMessage id="occasion-error">{errors.occasion}</FormErrorMessage>}
                         </FormControl>
                         <Button type="submit" value="Make Your Reservation" bg="#F4CE14" isDisabled={!isFormValid}>Book Now!</Button>
                     </VStack>
