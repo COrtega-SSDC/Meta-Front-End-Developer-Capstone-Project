@@ -61,21 +61,21 @@ function Login() {
 
     return (
         <>
-            <Flex height="800px" justifyContent="center">
+            <Flex height="600px" justifyContent="center" alignItems="center">
                 <form onSubmit={handleSubmit} noValidate>
-                    <VStack spacing={0} align="flex-start" textAlign="left" mt={0} gap="15px">
-                        <Text as='h1' color="#495E57">Log In</Text>
+                    <VStack spacing={0} mt={0} gap="15px">
+                        <Text as='h1' color="black" mb={5} textAlign="center">Log In</Text>
                         <FormControl isInvalid={!!errors.email}>
-                            <FormLabel as="h6">Email address</FormLabel>
+                            <FormLabel as="h6" >Email address</FormLabel>
                             <Input type='email' onChange={handleEmail} />
                             {errors.email && <FormErrorMessage id="email-error">{errors.email}</FormErrorMessage>}
                         </FormControl>
                         <FormControl isInvalid={!!errors.password}>
-                            <FormLabel as="h6">Password</FormLabel>
+                            <FormLabel as="h6" >Password</FormLabel>
                             <Input type='password' onChange={handlePassword}/>
                             {errors.password && <FormErrorMessage id="password-error">{errors.password}</FormErrorMessage>}
                         </FormControl>
-                        <Button type="submit" value="Login" bg="#F4CE14" width="full" mt="15px" style={style} isDisabled={!isFormValid}>Login</Button>
+                        <Button type="submit" value="Login" bg="#F4CE14" width="full" mt="25px" style={style} isDisabled={!isFormValid}>Login</Button>
                     </VStack>
                 </form>
             </Flex>
