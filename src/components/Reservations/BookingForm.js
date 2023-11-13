@@ -95,12 +95,12 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 <form onSubmit={handleSubmit} noValidate>
                     <VStack style={style}>
                         <FormControl isInvalid={!!errors.date}>
-                            <FormLabel htmlFor="res-date">Choose Date</FormLabel>
+                            <FormLabel as="h6" htmlFor="res-date">Choose Date</FormLabel>
                             <Input type="date" id="res-date" value={date} onChange={handleDateChange} aria-live="polite" required min={getCurrentDate()} />
                             {errors.date && <FormErrorMessage id="date-error">{errors.date}</FormErrorMessage>}
                         </FormControl >
                         <FormControl isInvalid={!!errors.time}>
-                            <FormLabel htmlFor="res-time">Choose Time</FormLabel>
+                            <FormLabel as="h6" htmlFor="res-time">Choose Time</FormLabel>
                             <Select id="res-time" value={time} onChange={handleTime} aria-live="polite">
                                 {availableTimes.map((availableTime) => (
                                     <option key={availableTime} value={availableTime}>
@@ -111,13 +111,13 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                             {errors.time && <FormErrorMessage id="time-error">{errors.time}</FormErrorMessage>}
                         </FormControl>
                         <FormControl isInvalid={!!errors.guests}>
-                            <FormLabel htmlFor="guests">Number of Guests</FormLabel>
-                            <Input type="number" min={1} max={10} id="guests" value={guests} onChange={handleGuests} aria-live="polite" required />
+                            <FormLabel as="h6" htmlFor="guests">Number of Guests</FormLabel>
+                            <Input type="number" min={1} max={10} id="guests" value={guests} onChange={handleGuests} aria-live="polite" required/>
                             {errors.guests && <FormErrorMessage id="guest-error">{errors.guests}</FormErrorMessage>}
                         </FormControl>
                         <FormControl isInvalid={!!errors.occasion}>
-                            <FormLabel htmlFor="occasion">Occasion</FormLabel>
-                            <Select id="occasion" value={occasion} onChange={handleOccasion} aria-live="polite" required>
+                            <FormLabel as="h6" htmlFor="occasion">Occasion</FormLabel>
+                            <Select id="occasion" value={occasion} onChange={handleOccasion} aria-live="polite" required >
                                 <option disabled>Please Select</option>
                                 <option>Birthday</option>
                                 <option>Anniversary</option>
@@ -125,7 +125,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                             </Select>
                             {errors.occasion && <FormErrorMessage id="occasion-error">{errors.occasion}</FormErrorMessage>}
                         </FormControl>
-                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14" isDisabled={!isFormValid} width="full" mt="15px">Book Now!</Button>
+                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14" as="h5" isDisabled={!isFormValid} width="full" mt="15px">Book Now!</Button>
                     </VStack>
                 </form>
 
