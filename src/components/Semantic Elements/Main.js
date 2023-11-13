@@ -9,6 +9,7 @@ import { fetchAPI, submitAPI } from '../../api';
 import HomePage from '../Home/Homepage';
 import BookingPage from '../Reservations/Booking Page'
 import ConfirmedBooking from '../Reservations/Confirmed Booking';
+import About from '../Pages/About';
 
 function Main() {
 
@@ -35,7 +36,7 @@ function Main() {
     <>
       <Routes>
         <Route path="/" title="homepage" element={<HomePage />}></Route>
-        <Route path="/about" title="about Little Lemon" element={<BookingPage />}></Route>
+        <Route path="/about" title="about Little Lemon" element={<About />}></Route>
         <Route path="/menu" title="Little Lemon Menu" element={<BookingPage />}></Route>
         <Route path="/reservations" title="Reserve a Table" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>}></Route>
         <Route path="/order" title="Order Online" element={<BookingPage />}></Route>
