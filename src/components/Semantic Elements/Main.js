@@ -10,6 +10,7 @@ import HomePage from '../Home/Homepage';
 import BookingPage from '../Reservations/Booking Page'
 import ConfirmedBooking from '../Reservations/Confirmed Booking';
 import About from '../Pages/About';
+import Login from '../Pages/Login'
 
 function Main() {
 
@@ -40,7 +41,7 @@ function Main() {
         <Route path="/menu" title="Little Lemon Menu" element={<BookingPage />}></Route>
         <Route path="/reservations" title="Reserve a Table" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>}></Route>
         <Route path="/order" title="Order Online" element={<BookingPage />}></Route>
-        <Route path="/login" title="Login" element={<BookingPage />}></Route>
+        <Route path="/login" title="Login" element={<Login />}></Route>
         <Route path="/confirmation" title=" Reservation Confirmed" element={<ConfirmedBooking />}></Route>
       </Routes>
     </>
