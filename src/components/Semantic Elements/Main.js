@@ -44,7 +44,7 @@ function Main() {
         <Route path="/order" title="Order Online" element={<BookingPage />}></Route>
         <Route path="/login" title="Login" element={<Login />}></Route>
         <Route path="/confirmation" title=" Reservation Confirmed" element={<ConfirmedBooking />}></Route>
-        <Route path="/portal" title="Login Dashboard" element={<Portal />}></Route>
+        <Route path="/portal" title="Login Dashboard" element={<Portal/>}></Route>
       </Routes>
     </>
   );

@@ -1,9 +1,17 @@
-import { useState, useEffect, useNavigate} from "react";
+import { useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import { Flex, Text, VStack, FormControl, FormLabel, Input, Button, FormErrorMessage } from "@chakra-ui/react";
 
 import { submitAPI } from "../../api";
 
 function Login() {
+
+    const style = {
+        fontFamily: 'Karla',
+        fontSize: 18,
+        fontWeight: 700,
+        wordWrap: 'break-word'
+    }    
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -32,7 +40,7 @@ function Login() {
         validateForm()
         if (isFormValid) {
             const formData = { email, password };
-            submitForm(formData);
+            submitLoginForm(formData);
         }
     }
 
@@ -42,9 +50,9 @@ function Login() {
         return emailPattern.test(email);
     };
 
-    const submitForm = formData => {
-        const submissionResult = submitAPI(formData);
-        if (submissionResult) {
+    const submitLoginForm = formData => {
+        const result = submitAPI(formData);
+        if (result) {
           navigate('/portal'); // Navigate to the booking confirmed page
         }
       };
@@ -67,7 +75,7 @@ function Login() {
                             <Input type='password' onChange={handlePassword}/>
                             {errors.password && <FormErrorMessage id="password-error">{errors.password}</FormErrorMessage>}
                         </FormControl>
-                        <Button type="submit" value="Login" bg="#F4CE14" width="full" mt="15px" as="h5" isDisabled={!isFormValid}>Login</Button>
+                        <Button type="submit" value="Login" bg="#F4CE14" width="full" mt="15px" style={style} isDisabled={!isFormValid}>Login</Button>
                     </VStack>
                 </form>
             </Flex>

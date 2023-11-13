@@ -10,6 +10,13 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         margin: "auto"
     }
 
+    const button_style = {
+        fontFamily: 'Karla',
+        fontSize: 18,
+        fontWeight: 700,
+        wordWrap: 'break-word'
+    } 
+
     //States 
     const [date, setDate] = useState('')
     const [time, setTime] = useState('')
@@ -125,7 +132,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                             </Select>
                             {errors.occasion && <FormErrorMessage id="occasion-error">{errors.occasion}</FormErrorMessage>}
                         </FormControl>
-                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14" as="h5" isDisabled={!isFormValid} width="full" mt="15px">Book Now!</Button>
+                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14" isDisabled={!isFormValid} width="full" mt="15px" style={button_style}>Book Now!</Button>
                     </VStack>
                 </form>
 
