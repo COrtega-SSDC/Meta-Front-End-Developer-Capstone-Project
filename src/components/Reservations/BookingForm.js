@@ -125,7 +125,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                             </Select>
                             {errors.occasion && <FormErrorMessage id="occasion-error">{errors.occasion}</FormErrorMessage>}
                         </FormControl>
-                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14" isDisabled={!isFormValid}>Book Now!</Button>
+                        <Button type="submit" value="Make Your Reservation" bg="#F4CE14" isDisabled={!isFormValid} width="full">Book Now!</Button>
                     </VStack>
                 </form>
 
