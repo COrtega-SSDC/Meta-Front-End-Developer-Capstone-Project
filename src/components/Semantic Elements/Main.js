@@ -12,6 +12,8 @@ import ConfirmedBooking from '../Reservations/Confirmed Booking';
 import About from '../Pages/About';
 import Login from '../Pages/Login'
 import Portal from '../Pages/Portal'
+import OnlineOrder from '../Pages/OnlineOrder'
+import Menu from '../Pages/Menu';
 
 function Main() {
 
@@ -39,12 +41,12 @@ function Main() {
       <Routes>
         <Route path="/" title="homepage" element={<HomePage />}></Route>
         <Route path="/about" title="about Little Lemon" element={<About />}></Route>
-        <Route path="/menu" title="Little Lemon Menu" element={<BookingPage />}></Route>
+        <Route path="/menu" title="Little Lemon Menu" element={<Menu />}></Route>
         <Route path="/reservations" title="Reserve a Table" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>}></Route>
-        <Route path="/order" title="Order Online" element={<BookingPage />}></Route>
+        <Route path="/order" title="Order Online" element={<OnlineOrder />}></Route>
         <Route path="/login" title="Login" element={<Login />}></Route>
         <Route path="/confirmation" title=" Reservation Confirmed" element={<ConfirmedBooking />}></Route>
-        <Route path="/portal" title="Login Dashboard" element={<Portal/>}></Route>
+        <Route path="/maintenance" title="Login Dashboard" element={<Portal/>}></Route>
       </Routes>
     </>
   );
