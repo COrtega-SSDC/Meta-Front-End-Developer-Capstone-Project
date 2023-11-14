@@ -53,7 +53,7 @@ function Login() {
     const submitLoginForm = formData => {
         const result = submitAPI(formData);
         if (result) {
-          navigate('/portal'); // Navigate to the booking confirmed page
+          navigate('/maintenance'); // Navigate to the booking confirmed page
         }
       };
 
