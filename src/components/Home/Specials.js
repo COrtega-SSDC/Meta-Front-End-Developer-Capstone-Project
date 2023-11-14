@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, Box, Flex, VStack } from '@chakra-ui/react'
+import { Button, Heading, HStack, Box, Flex, VStack, Text } from '@chakra-ui/react'
 
 import salad from '../../images/greek salad.jpg'
 import dessert from '../../images/lemon dessert.jpg'
@@ -40,7 +40,7 @@ function Specials() {
             <Flex justifyContent="center" height="715px">
                 <VStack marginTop='75px' marginBottom='73px'>
                     <HStack spacing="216px" marginBottom='51px'>
-                        <Box as='h1' style={{ color: 'black' }}>This week's specials!</Box>
+                        <Text as='h1' style={{ color: 'black' }}>This week's specials!</Text>
                         <Link to="/menu">
                             <Button
                                 bgColor="#F4CE14"
@@ -61,7 +61,7 @@ function Specials() {
                                 />
                                 <Box height='253.742px' bg="#EDEFEE">
                                     <HStack justifyContent="center" spacing="68.85px">
-                                        <Box as='h5' mt="19.32px">Greek Salad</Box>
+                                        <Text as='h5' mt="19.32px">Greek Salad</Text>
                                         <Heading style={price} mt="20.19">$12.99</Heading>
                                     </HStack>
                                     <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
@@ -87,7 +87,7 @@ function Specials() {
                                 />
                                 <Box height='253.742px' bg="#EDEFEE">
                                     <HStack justifyContent="center" spacing="83.85px">
-                                        <Box as='h5' mt="19.32px">Bruchetta</Box>
+                                        <Text as='h5' mt="19.32px">Bruchetta</Text>
                                         <Heading style={price} mt="20.19">$5.99</Heading>
                                     </HStack>
                                     <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
@@ -114,7 +114,7 @@ function Specials() {
                                 />
                                 <Box height='253.742px' bg="#EDEFEE">
                                     <HStack justifyContent="center" spacing="42.85px">
-                                        <Box as='h5' mt="19.32px">Lemon Dessert</Box>
+                                        <Text as='h5' mt="19.32px">Lemon Dessert</Text>
                                         <Heading style={price} mt="20.19">$5.00</Heading>
                                     </HStack>
                                     <Box as='p' width="216.73553px" height="120.286px" margin="32.29px auto auto auto" textAlign="left">
