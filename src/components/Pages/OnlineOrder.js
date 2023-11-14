@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, Box, Flex, VStack } from '@chakra-ui/react'
+import { Button, Heading, HStack, Box, Flex, VStack, Text } from '@chakra-ui/react'
 
 import salad from '../../images/greek salad.jpg'
 import dessert from '../../images/lemon dessert.jpg'
@@ -37,8 +37,9 @@ function OnlineOrder() {
 
     return (
         <>
-            <Flex justifyContent="center" height="715px">
+            <Flex justifyContent="center" height="900px">
                 <VStack marginTop='75px' marginBottom='73px'>
+                    <Text as="h1" color="black" mb={10}>Order Now!</Text>
                     <HStack spacing="216px" marginBottom='51px'>
                         <Box as='h1' style={{ color: 'black' }}>This week's specials!</Box>
                             <Button
