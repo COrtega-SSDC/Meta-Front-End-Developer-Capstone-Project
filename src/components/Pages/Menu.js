@@ -37,7 +37,7 @@ function Menu() {
 
     return (
         <>
-            <Flex justifyContent="center" height="900px">
+            <Flex justifyContent="center" height="900px" bg="#EDEFEE">
                 <VStack marginTop='75px' marginBottom='73px'>
                     <Text as="h1" color="black" mb={10}>Our Menu</Text>
                     <HStack spacing="216px" marginBottom='51px'>
@@ -54,13 +54,14 @@ function Menu() {
                     </HStack>
                     <HStack spacing='34.32px'>
                         <article>
-                            <Box width='264.667px' height='439px' flexShrink={0}>
+                            <Box width='264.667px' height='439px' flexShrink={0} >
                                 <Box
                                     as='img'
                                     src={salad}
                                     className='specials_image'
+                                    border="1px black solid"
                                 />
-                                <Box height='253.742px' bg="#EDEFEE">
+                                <Box height='253.742px' bg="#EDEFEE" border="1px black solid">
                                     <HStack justifyContent="center" spacing="68.85px">
                                         <Text as='h5' mt="19.32px">Greek Salad</Text>
                                         <Heading style={price} mt="20.19">$12.99</Heading>
@@ -85,8 +86,9 @@ function Menu() {
                                     as='img'
                                     src={bruschetta}
                                     className='specials_image'
+                                    border="1px black solid"
                                 />
-                                <Box height='253.742px' bg="#EDEFEE">
+                                <Box height='253.742px' bg="#EDEFEE" border="1px black solid">
                                     <HStack justifyContent="center" spacing="83.85px">
                                         <Text as='h5' mt="19.32px">Bruchetta</Text>
                                         <Heading style={price} mt="20.19">$5.99</Heading>
@@ -112,8 +114,9 @@ function Menu() {
                                     src={dessert}
                                     className='specials_image'
                                     objectFit="cover"
+                                    border="1px black solid"
                                 />
-                                <Box height='253.742px' bg="#EDEFEE">
+                                <Box height='253.742px' bg="#EDEFEE" border="1px black solid">
                                     <HStack justifyContent="center" spacing="42.85px">
                                         <Text as='h5' mt="19.32px">Lemon Dessert</Text>
                                         <Heading style={price} mt="20.19">$5.00</Heading>
