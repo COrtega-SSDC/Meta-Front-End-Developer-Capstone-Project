@@ -6,7 +6,7 @@ function BookingPage({ availableTimes, dispatch, submitForm }) {
     return (
         <>
             <Flex justifyContent="center">
-                <VStack gap={20} mb={20}>
+                <VStack gap={10} mb={20}>
                     <Heading as='h1' color="black">Reservations</Heading>
                     <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
                 </VStack>
